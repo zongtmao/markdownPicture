@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery响应式瀑布流布插件jaliswall.js</title>
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
+    <link rel="stylesheet" type="text/css" href="css/owl.carousel.min.css">
+</head>
+
+<body>
+    <button class="section__nav section__nav--bg section__nav--prev" type="button" data-nav="#carousel0">
+    prev
+  </button>
+
+    <button class="section__nav section__nav--bg section__nav--next" type="button" data-nav="#carousel0">
+    next
+  </button>
+
+
+    <div class="wall owl-carousel section__carousel section__carousel--big" id="carousel0">
+        <div class="article"> 1
+            <h2>Cursus cursus proin auctor in in ac, nunc, tortor</h2>
+        </div>
+        <div class="article"> 2
+            <h2>Cursus cursus proin auctor in in ac, nunc, tortor</h2>
+        </div>
+        <div class="article"> 3
+            <h2>Cursus cursus proin auctor in in ac, nunc, tortor</h2>
+        </div>
+        <div class="article"> 4
+            <h2>Cursus cursus proin auctor in in ac, nunc, tortor</h2>
+        </div>
+        <div class="article"> 5
+            <h2>Cursus cursus proin auctor in in ac, nunc, tortor</h2>
+        </div>
+        <div class="article"> 6
+            <h2>Cursus cursus proin auctor in in ac, nunc, tortor</h2>
+        </div>
+        <div class="article"> 7
+            <h2>Cursus cursus proin auctor in in ac, nunc, tortor</h2>
+        </div>
+        <div class="article"> 8
+            <h2>Cursus cursus proin auctor in in ac, nunc, tortor</h2>
+        </div>
+        <div class="article"> 9
+            <h2>Cursus cursus proin auctor in in ac, nunc, tortor</h2>
+        </div>
+        <div class="article"> 10
+            <h2>Cursus cursus proin auctor in in ac, nunc, tortor</h2>
+        </div>
+        <div class="article"> 11
+            <h2>Cursus cursus proin auctor in in ac, nunc, tortor</h2>
+        </div>
+        <div class="article"> 12
+            <h2>Cursus cursus proin auctor in in ac, nunc, tortor</h2>
+        </div>
+        <div class="article"> 13
+            <h2>Cursus cursus proin auctor in in ac, nunc, tortor</h2>
+        </div>
+        <div class="article"> 14
+            <h2>Cursus cursus proin auctor in in ac, nunc, tortor</h2>
+        </div>
+    </div>
+    <script src="js/jquery-2.1.1.min.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $('.section__carousel--big').owlCarousel({
+                mouseDrag: true,
+                touchDrag: false,
+                dots: true,
+                loop: false,
+                autoplay: false,
+                smartSpeed: 700,
+                margin: 5,
+                autoHeight: true,
+                autoWidth: true,
+                stagePadding: 15,
+                nav: true,
+                navText: ['next', 'prev']
+            });
+            $('.section__nav--prev, .details__nav--prev').on('click', function() {
+                var carouselId = $(this).attr('data-nav');
+                $(carouselId).trigger('prev.owl.carousel');
+            });
+            $('.section__nav--next, .details__nav--next').on('click', function() {
+                var carouselId = $(this).attr('data-nav');
+                $(carouselId).trigger('next.owl.carousel');
+            });
+        });
+    </script>
+</body>
+
+</html>
